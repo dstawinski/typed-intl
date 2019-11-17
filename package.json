@@ -1,6 +1,6 @@
 {
   "name": "typed-translations",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Use and define translations in Typescript without hassle.",
   "publishConfig": {
     "access": "public"
