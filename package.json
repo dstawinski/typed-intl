@@ -1,10 +1,13 @@
 {
-  "name": "typed-intl",
+  "name": "typed-translations",
   "version": "0.0.1",
-  "description": "",
+  "description": "Use and define translations in Typescript without hassle.",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.js",
   "bin": {
-    "extract-translations": "./dist/src/lib/extractTranslations.js"
+    "extract-translations": "./dist/src/extractTranslations.js"
   },
   "scripts": {
     "build": "tsc",
@@ -18,9 +21,11 @@
   },
   "keywords": [
     "i18n",
-    "reacti18next"
+    "reacti18next",
+    "translation"
   ],
-  "author": "Dominik Stawiński",
+  "homepage": "https://github.com/dstawinski/typed-translations",
+  "author": "Dominik Stawiński <dominik.stawinski@dreamlab.pl>",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^12.12.8",
