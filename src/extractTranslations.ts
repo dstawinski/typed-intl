@@ -53,15 +53,27 @@ function createJSONFile(
   tDirOutputPath: string,
   inputFilename: string
 ) {
+  const translationJSON = fixKeys(translationObject);
+  const translatonJSONWithoutSingle = removeSingleQuotes(translationJSON);
+  fs.outputFile(
+    path.join(tDirOutputPath, inputFilename.replace(/\.ts$/, ".json")),
+    translatonJSONWithoutSingle
+  );
+}
+
+function fixKeys(translationObject: string) {
   const objectKeysRegex = /(^\s+)(\w+)(:)/gm;
   const translationJSON = translationObject.replace(
     objectKeysRegex,
     '$1"$2"$3'
   );
-  fs.outputFile(
-    path.join(tDirOutputPath, inputFilename.replace(/\.ts$/, ".json")),
-    translationJSON
-  );
+  return translationJSON;
+}
+
+function removeSingleQuotes(translationObject: string) {
+  const singleQuotesRegex = /'([^']*)',/g;
+  const translationJSON = translationObject.replace(singleQuotesRegex, '"$1"');
+  return translationJSON;
 }
 
 async function extractObjectDefinition(
