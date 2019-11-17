@@ -71,8 +71,11 @@ function fixKeys(translationObject: string) {
 }
 
 function removeSingleQuotes(translationObject: string) {
-  const singleQuotesRegex = /'([^']*)',/g;
-  const translationJSON = translationObject.replace(singleQuotesRegex, '"$1"');
+  const singleQuotesRegex = /'([^']*)'(,|:)/g;
+  const translationJSON = translationObject.replace(
+    singleQuotesRegex,
+    '"$1"$2'
+  );
   return translationJSON;
 }
 
