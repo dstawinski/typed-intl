@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "test": "npm i -g && extract-translations test/translations test/public/locales",
+    "test": "npm i -g && typed-translations test/translations test/public/locales",
     "create": "npm run build && npm run test"
   },
   "husky": {
