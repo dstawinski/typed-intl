@@ -5,6 +5,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dstawinski/typed-translations.git"
+  },
   "main": "dist/src/index.js",
   "bin": {
     "typed-translations": "./dist/src/extractTranslations.js"

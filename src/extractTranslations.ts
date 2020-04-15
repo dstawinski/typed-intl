@@ -50,8 +50,8 @@ function fixKeys(translationObject: string) {
 }
 
 function removeSingleQuotes(translationObject: string) {
-  const singleQuotesRegex = /'([^']*)'(,|:)/g;
-  const trailingCommaRegex = /",(\s)}/g;
+  const singleQuotesRegex = /'([^']*)'(,*|:)/g;
+  const trailingCommaRegex = /",(\s)*}/g;
   const translationJSON = translationObject.replace(singleQuotesRegex, '"$1"$2');
   const properJSON = translationJSON.replace(trailingCommaRegex, '"$1}');
   return properJSON;
